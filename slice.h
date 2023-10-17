@@ -4,22 +4,22 @@
 #include <iterator>
 
 namespace detail {
-template <typename Container> class slice {
+template <typename Container, typename Index> class slice {
 public:
-  slice(Container &c, int i, int j) : mc{c}, mi{i}, mj{j} {}
+  slice(Container &c, const Index i, const Index j) : mc{c}, mi{i}, mj{j} {}
 
   [[nodiscard]] auto begin() { return std::next(std::begin(mc), mi); }
   [[nodiscard]] auto end() { return std::next(std::begin(mc), mj); }
 
 private:
   Container &mc;
-  int mi;
-  int mj;
+  Index mi;
+  Index mj;
 };
 } // namespace detail
 
-template <typename Container>
-[[nodiscard]] auto slice(Container &c, const Container::size_type& i, const Container::size_type& j) {
+template <typename Container, typename Index>
+[[nodiscard]] auto slice(Container &c, const Index i, const Index j) {
   return detail::slice<Container>(c, i, j);
 }
 
