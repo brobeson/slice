@@ -20,7 +20,7 @@ private:
 
 template <typename Container, typename Index>
 [[nodiscard]] auto slice(Container &c, const Index i, const Index j) {
-  return detail::slice<Container>(c, i, j);
+  return detail::slice<Container, Index>(c, i, j);
 }
 
 #endif
