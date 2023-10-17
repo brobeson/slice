@@ -19,7 +19,7 @@ private:
 } // namespace detail
 
 template <typename Container>
-[[nodiscard]] auto slice(Container &c, int i, int j) {
+[[nodiscard]] auto slice(Container &c, const Container::size_type& i, const Container::size_type& j) {
   return detail::slice<Container>(c, i, j);
 }
 
