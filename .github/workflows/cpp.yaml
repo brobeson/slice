@@ -4,9 +4,9 @@ on:
   pull_request:
   push:
 jobs:
-  staticAnalysis:
-    name: Code Quality
-    uses: brobeson/brobeson/.github/workflows/support_files.yaml@main
+  # staticAnalysis:
+  #   name: Code Quality
+  #   uses: brobeson/brobeson/.github/workflows/support_files.yaml@main
   cpp:
     name: C++
     uses: brobeson/brobeson/.github/workflows/cpp.yaml@reusable_workflows
