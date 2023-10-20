@@ -1,5 +1,6 @@
 #include "slice.h"
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/benchmark/catch_benchmark.hpp>
 #include <vector>
 
 SCENARIO("A developer can use a slice") {
